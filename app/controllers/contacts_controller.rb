@@ -9,7 +9,7 @@ class ContactsController < ApplicationController
    
    #POST request /contacts
    def create
-     #Mass assignment of form fields into contact object
+     #mass assignment of form fields into contact object
        @contact = Contact.new(contact_params)
        #Save the contact object to database
       if @contact.save
@@ -25,7 +25,7 @@ class ContactsController < ApplicationController
         flash[:success] = "Message Sent"
        redirect_to new_contact_path
       else
-        # If contact object doesn't save
+        # if contact object doesn't save
         #store errors in flash hash
         #and redirect to the new action
         flash[:danger] = @contact.errors.full_messages.join(", ")
