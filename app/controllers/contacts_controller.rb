@@ -13,7 +13,7 @@ class ContactsController < ApplicationController
        @contact = Contact.new(contact_params)
        #Save the contact object to database
       if @contact.save
-        #store form fields via parameters,into variables
+        #Store form fields via parameters,into variables
         name=params[:contact][:name]
         email=params[:contact][:email]
         body=params[:contact][:comments]
